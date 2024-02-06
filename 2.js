@@ -8,10 +8,17 @@ class Book {
    * author - автор книги
    * coverColor - колір обкладинки книги
    */
+  constructor(title, author, coverColor) {
+    this.#title = title;
+    this.#author = author;
+    this.#coverColor = coverColor;
+  }
   /**
    * Метод describe генерує опис книги
    *  Повертає рядок у форматі: "Книга: '{назва}', автор: '{автор}', колір обкладинки: '{колір}'"
    */
+  return `Книга: ${this.#title}, автор: ${this.#author}, колір обкладинки: ${this.#coverColor}`
+  
 }
 
 /**
@@ -24,10 +31,16 @@ class AudioBook {
    * author - автор книги
    * audioLength - тривалість аудіокниги
    */
+  constructor(title, author, audioLength) {
+    this.#title = title;
+    this.#author = author;
+    this.#audioLength = audioLength;
+  }
   /**
-     * Метод describe генерує опис аудіокниги
-       Повертає рядок у форматі: "Аудіокнига: '{назва}', автор: '{автор}', тривалість: '{тривалість}'"
-     */
+ * Метод describe генерує опис аудіокниги
+	 Повертає рядок у форматі: "Аудіокнига: '{назва}', автор: '{автор}', тривалість: '{тривалість}'"
+	*/
+	return `Аудіокнига: ${this.#title}, автор: ${this.#author}, тривалість: ${this.#audioLength}`
 }
 
 /**
@@ -40,6 +53,10 @@ class ProductFactory {
   //   BOOK: "book",
   //   AUDIOBOOK: "audiobook",
   // }
+  staticTYPE() {
+	BOOK: "book",
+    AUDIOBOOK: "audiobook",
+  }
   /**
    * Статичний метод createProduct використовується для створення об'єктів-продуктів, отримує
    * type - тип продукту, що має бути створений. Має бути одним зі значень властивості TYPE.
